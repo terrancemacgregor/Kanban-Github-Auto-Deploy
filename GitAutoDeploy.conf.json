@@ -1,0 +1,11 @@
+{
+	"port": 8001, 
+	"repositories": 
+	[
+      {
+        "url": "https://github.com/terrancemacgregor/kanbanmanifesto",
+        "path": "/usr/share/nginx/html/kanban",
+        "deploy": "echo kanban_man"
+      }
+    ]
+}
