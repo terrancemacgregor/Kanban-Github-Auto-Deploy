@@ -84,6 +84,8 @@ class GitAutoDeploy(BaseHTTPRequestHandler):
 
     def deploy(self, path):
         config = self.getConfig()
+        print "Inside the deploy command function! - Yay!"
+
         for repository in config['repositories']:
             if(repository['path'] == path):
                 if 'deploy' in repository:
@@ -120,7 +122,9 @@ def main():
             print 'Github Autodeploy Service v0.2 started'
         else:
             print 'Github Autodeploy Service v 0.2 started in daemon mode'
-             
+
+        print 'Turning on the server for this port: ' + GitAutoDeploy.getConfig()['port'])
+
         server = HTTPServer(('', GitAutoDeploy.getConfig()['port']), GitAutoDeploy)
         server.serve_forever()
     except (KeyboardInterrupt, SystemExit) as e:
@@ -134,4 +138,5 @@ def main():
             print 'Goodbye'
 
 if __name__ == '__main__':
-     main()
+    print "running"
+    main()
